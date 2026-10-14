@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>3G Flora – Resin Diya Holders</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF9F7;--surf:#fff;--ink:#3A2230;--mute:#7B666F;--line:#EBDDD6;--gold:#A8812F;--rose:#B8466B;--rose-t:#fff;--err:#B3261E;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1D1319;--surf:#2A1C25;--ink:#F6E9EE;--mute:#B9A2AC;--line:#43303B;--gold:#D9B35E;--rose:#E3799A;--rose-t:#2A1119;--err:#FF8A80}}
+:root[data-theme="dark"]{--bg:#1D1319;--surf:#2A1C25;--ink:#F6E9EE;--mute:#B9A2AC;--line:#43303B;--gold:#D9B35E;--rose:#E3799A;--rose-t:#2A1119;--err:#FF8A80}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.5 'DM Sans',system-ui,sans-serif;padding-bottom:calc(96px + env(safe-area-inset-bottom,0px))}
+header{text-align:center;padding:34px 20px 22px;max-width:640px;margin:0 auto}
+h1{font:700 44px/1 'Cormorant Garamond',Georgia,serif;margin:0;letter-spacing:.02em}
+header p{margin:10px 0 0;color:var(--mute)}
+.rule{display:inline-block;margin-top:12px;padding:6px 16px;border:1px solid var(--gold);border-radius:99px;color:var(--gold);font-weight:500;font-size:14px}
+main{max-width:1000px;margin:0 auto;padding:8px 14px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:720px){main{grid-template-columns:repeat(3,1fr);gap:20px}}
+.card{background:var(--surf);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.info{padding:12px 12px 14px;display:flex;flex-direction:column;gap:4px;flex:1}
+.info h2{font:600 21px/1.1 'Cormorant Garamond',Georgia,serif;margin:0}
+.info p{margin:0;color:var(--mute);font-size:13px;line-height:1.4;flex:1}
+.row{display:flex;align-items:center;justify-content:space-between;margin-top:10px;gap:6px}
+.price{font-weight:700;color:var(--rose)}.price small{font-weight:400;color:var(--mute)}
+.qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:99px}
+.qty button{width:34px;height:34px;border:0;background:none;color:var(--ink);font-size:20px;border-radius:99px;cursor:pointer}
+.qty span{min-width:22px;text-align:center;font-weight:700}
+.card.wide{grid-column:1/-1}.card.wide img{aspect-ratio:4/3}
+.card.on{border-color:var(--rose);box-shadow:0 0 0 1px var(--rose)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+#bar{position:fixed;left:0;right:0;bottom:0;padding:12px 14px calc(12px + env(safe-area-inset-bottom,0px));background:var(--surf);border-top:1px solid var(--line);display:flex;align-items:center;gap:12px;justify-content:center}
+#bar div{line-height:1.25;font-size:13px;color:var(--mute)}#bar b{display:block;color:var(--ink);font-size:16px}
+.cta{background:var(--rose);color:var(--rose-t);border:0;border-radius:99px;padding:13px 26px;font:700 16px 'DM Sans',sans-serif;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.cta[disabled]{opacity:.45;cursor:not-allowed}
+#hint{position:fixed;left:0;right:0;bottom:calc(76px + env(safe-area-inset-bottom,0px));text-align:center;font-size:13px;color:var(--mute);pointer-events:none}
+#ov{position:fixed;inset:0;background:rgba(20,8,14,.55);display:none;align-items:flex-end;justify-content:center;z-index:5}
+#ov.show{display:flex}
+form{background:var(--surf);width:100%;max-width:520px;max-height:92%;overflow:auto;border-radius:20px 20px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom,0px));animation:up .22s ease-out}
+@keyframes up{from{transform:translateY(40px);opacity:0}}
+@media(prefers-reduced-motion:reduce){form{animation:none}}
+@media(min-width:560px){#ov{align-items:center}form{border-radius:20px}}
+form h3{font:700 28px/1 'Cormorant Garamond',Georgia,serif;margin:0 0 10px}
+.sum{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13.5px;margin-bottom:14px}
+.sum div{display:flex;justify-content:space-between;gap:10px;padding:2px 0}.sum .t{border-top:1px solid var(--line);margin-top:6px;padding-top:6px;font-weight:700}
+label{display:block;font-weight:500;font-size:13.5px;margin:10px 0 4px}
+input,textarea{width:100%;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;padding:11px 12px;font:inherit}
+textarea{min-height:76px;resize:vertical}
+.err{color:var(--err);font-size:12.5px;min-height:16px;margin-top:3px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.acts{display:flex;gap:10px;margin-top:16px}.acts .cta{flex:1}.ghost{background:none;color:var(--ink);border:1px solid var(--line)}
+.note{font-size:12.5px;color:var(--mute);margin:10px 0 0;text-align:center}
+</style></head><body>
+<header><h1>3G Flora</h1><p>Handmade resin diya holders from Pune. Choose what you want, then place your order.</p><span class="rule">Pairs ₹199–₹299 · Hamper ₹1299 · minimum order ₹999</span></header>
+<main id="grid"></main>
+<div id="hint"></div>
+<div id="bar"><div><span id="cnt">0 pairs</span><b id="tot">₹0</b></div><button class="cta" id="order" disabled>Order now</button></div>
+<div id="ov" role="dialog" aria-modal="true" aria-labelledby="ft"><form id="f" novalidate>
+<h3 id="ft">Your order</h3><div class="sum" id="sum"></div>
+<label for="n">Full name</label><input id="n" autocomplete="name"><div class="err" id="en"></div>
+<label for="m">Mobile number</label><input id="m" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="10-digit number"><div class="err" id="em"></div>
+<label for="a">Full address</label><textarea id="a" autocomplete="street-address" placeholder="House no., building, street, area"></textarea><div class="err" id="ea"></div>
+<div class="two"><div><label for="c">City</label><input id="c" autocomplete="address-level2"><div class="err" id="ec"></div></div><div><label for="p">Pincode</label><input id="p" inputmode="numeric" maxlength="6" autocomplete="postal-code"><div class="err" id="ep"></div></div></div>
+<label for="x">Notes (optional)</label><input id="x" placeholder="Gift message, delivery date, etc.">
+<div class="acts"><button type="button" class="cta ghost" id="back">Back</button><a class="cta" id="send" target="_blank" rel="noopener" href="#">Place order</a></div>
+<p class="note">After you place your order, our team will reach out to you shortly for payment details.</p>
+</form></div>
+<script>
+window.onerror=function(m,s,l){var h=document.getElementById('hint');if(h)h.textContent='Error: '+m+' (line '+l+')'};
+const WA_NUMBER='917083642528'; // seller WhatsApp: country code + number, no + or spaces
+const MIN=999,PRICE=299;
+const IMG={14:'00_Shubh_Labh_Hamper.jpg',1:'01_Blush_Blossom.jpg',3:'02_Coral_Garden.jpg',6:'03_Ivory_Lime_Bloom.jpg',2:'04_Mint_Pearl_Leaf.jpg',8:'05_Sunshine_Pastel_Bloom.jpg',4:'06_Ruby_Pearl_Trio.jpg',5:'07_Marigold_Petal.jpg',7:'08_Magenta_Lotus.jpg',9:'09_Rose_Petal.jpg',12:'10_Golden_Foil_Petal.jpg',13:'11_Coral_Lotus.jpg',11:'12_Pearl_Lotus.jpg'};
+const P=[[14,'Shubh Labh Diwali Hamper','6-inch thali, diya holder and Shubh Labh hanging pair',1299,'hamper'],[1,'Blush Blossom','White scalloped base, blush-pink flower, pearls and a gold leaf sprig'],[3,'Coral Garden','Coral base, pearl-centred white flower, twin gold leaf sprigs'],[6,'Ivory Lime Bloom','Soft lime base, white pearl flower, golden leaves'],[2,'Mint Pearl Leaf','Mint-green base, gold filigree leaf, two pearl clusters'],[8,'Sunshine Pastel Bloom','Sunny yellow base, pastel flower, filigree leaves'],[4,'Ruby Pearl Trio','Glossy ruby-red base, three pearl-centred mini flowers'],[5,'Marigold Petal','Golden-yellow resin petals, gold-rimmed',199],[7,'Magenta Lotus','Translucent magenta petals, gold edge',199],[9,'Rose Petal','Soft pink layered petals, gold edge'],[12,'Golden Foil Petal','Clear petals with gold and silver foil, yellow centre',199],[13,'Coral Lotus','Layered coral-red petals, shimmering gold rim'],[11,'Pearl Lotus','Pink lotus petals framed with a pearl ring']];
+const Q={};const $=id=>document.getElementById(id);
+const grid=$('grid');
+P.forEach(([id,name,desc,pr=PRICE,un='pair'],i)=>{Q[id]=0;const d=document.createElement('div');d.className='card'+(id==14?' wide':'');d.id='c'+id;
+d.innerHTML=`<img src="${IMG[id]}" alt="${name} diya holder" loading="lazy"><div class="info"><h2>${name}</h2><p>${desc}</p><div class="row"><span class="price">₹${pr} <small>/ ${un}</small></span><div class="qty"><button aria-label="Remove one pair of ${name}" data-d="-1" data-i="${id}">−</button><span id="q${id}" aria-live="polite">0</span><button aria-label="Add one pair of ${name}" data-d="1" data-i="${id}">+</button></div></div></div>`;grid.appendChild(d)});
+const pairs=()=>Object.values(Q).reduce((a,b)=>a+b,0);const total=()=>P.reduce((a,p)=>a+Q[p[0]]*(p[3]||PRICE),0);
+function upd(){const n=pairs(),t=total();$('cnt').textContent=n+(n==1?' item':' items');$('tot').textContent='₹'+t;
+P.forEach(([id])=>{$('q'+id).textContent=Q[id];$('c'+id).classList.toggle('on',Q[id]>0)});
+const ok=t>=MIN;$('order').disabled=!ok;const need=Math.ceil((MIN-t)/PRICE);
+$('hint').textContent=n&&!ok?`Add ₹${MIN-t} more to reach the ₹${MIN} minimum`:(!n?`Minimum order ₹${MIN}`:'')}
+grid.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const i=+b.dataset.i;Q[i]=Math.max(0,Math.min(50,Q[i]+ +b.dataset.d));upd()});
+const items=()=>P.filter(([id])=>Q[id]>0).map(([id,name,d,pr=PRICE,un='pair'])=>({name,q:Q[id],pr,un}));
+$('order').onclick=()=>{$('sum').innerHTML=items().map(o=>`<div><span>${o.name} × ${o.q}</span><span>₹${o.q*o.pr}</span></div>`).join('')+`<div class="t"><span>Total (${pairs()} ${pairs()==1?'item':'items'})</span><span>₹${total()}</span></div>`;$('ov').classList.add('show');$('n').focus()};
+const close=()=>$('ov').classList.remove('show');$('back').onclick=close;$('ov').addEventListener('click',e=>{if(e.target.id=='ov')close()});
+document.addEventListener('keydown',e=>{if(e.key=='Escape')close()});
+function check(){const v=id=>$(id).value.trim();const E={n:v('n').length<2?'Enter your full name':'',m:/^[6-9]\d{9}$/.test(v('m'))?'':'Enter a valid 10-digit mobile number',a:v('a').length<10?'Enter your full address':'',c:v('c').length<2?'Enter your city':'',p:/^\d{6}$/.test(v('p'))?'':'Enter a 6-digit pincode'};
+let bad=0;for(const k in E){$('e'+k).textContent=E[k];if(E[k])bad++}return !bad}
+$('send').addEventListener('click',e=>{if(!check()||total()<MIN){e.preventDefault();return}
+if(/X/.test(WA_NUMBER)){e.preventDefault();alert('Seller WhatsApp number is not set yet.');return}
+const v=id=>$(id).value.trim();
+const lines=['*New Order – 3G Flora*','',...items().map((o,i)=>`${i+1}. ${o.name} × ${o.q} ${o.un}${o.q==1?'':'s'} = ₹${o.q*o.pr}`),'',`*Total: ₹${total()}* (${pairs()} ${pairs()==1?'item':'items'})`,'',`Name: ${v('n')}`,`Mobile: ${v('m')}`,`Address: ${v('a')}, ${v('c')} - ${v('p')}`];
+if(v('x'))lines.push(`Notes: ${v('x')}`);
+$('send').href='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(lines.join('\n'))});
+upd();
+</script></body></html>
